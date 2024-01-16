@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  postfix:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: postfix-container
+    restart: always
+    ports:
+      - "25:25"
+    environment:
+      - DOMAIN_NAME=your-custom-domain.com  # Replace with your actual custom domain
